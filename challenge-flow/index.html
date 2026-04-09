@@ -44,6 +44,54 @@
       text-transform: uppercase;
     }
 
+    /* ── NAV DOTS ── */
+    .nav-dots {
+      position: fixed;
+      right: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+    .nav-dots a {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .nav-dots a:hover,
+    .nav-dots a.active {
+      background: #00c9a7;
+      transform: scale(1.4);
+    }
+
+    /* ── SLIDE COUNTER ── */
+    .slide-counter {
+      position: fixed;
+      bottom: 24px;
+      right: 32px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+      z-index: 100;
+      letter-spacing: 1px;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00c9a7, #00b894);
+      z-index: 200;
+      transition: width 0.3s ease;
+    }
+
     .slide-num {
       position: absolute;
       bottom: 40px; right: 56px;
@@ -661,8 +709,27 @@
 </head>
 <body>
 
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Nav Dots -->
+<nav class="nav-dots" id="navDots">
+  <a href="#cover" title="Cover"></a>
+  <a href="#contexto" title="Contexto"></a>
+  <a href="#problema" title="Problema"></a>
+  <a href="#diagnostico" title="Diagnóstico"></a>
+  <a href="#propuesta" title="Propuesta"></a>
+  <a href="#gobierno" title="Gobierno"></a>
+  <a href="#rituales" title="Rituales"></a>
+  <a href="#metricas" title="Métricas"></a>
+  <a href="#cierre" title="Cierre"></a>
+</nav>
+
+<!-- Slide Counter -->
+<div class="slide-counter" id="slideCounter">01 / 09</div>
+
 <!-- ── SLIDE 1: COVER ── -->
-<div class="slide s1">
+<div class="slide s1" id="cover">
   <div class="s1-glow"></div>
   <div class="s1-content">
     <div class="label s1-eyebrow">Challenge — Product Design Ops</div>
@@ -670,11 +737,10 @@
     <p class="s1-sub">Una propuesta de abordaje para un equipo que ya tiene el sistema — pero aún no lo aprovecha del todo.</p>
     <div class="s1-author">Giuliana Sambón</div>
   </div>
-  <div class="slide-num">01 / 09</div>
 </div>
 
 <!-- ── SLIDE 2: CONTEXTO ── -->
-<div class="slide s2">
+<div class="slide s2" id="contexto">
   <div class="s2-left">
     <div class="label">El punto de partida</div>
     <h2 class="s2-big">El escenario que me dieron</h2>
@@ -687,11 +753,10 @@
     <div class="context-card accent"><span class="icon">📺</span> Ecosistema multiplataforma — hasta TV</div>
     <div class="context-card"><span class="icon">⚠️</span> DS existente, adopción irregular</div>
   </div>
-  <div class="slide-num">02 / 09</div>
 </div>
 
 <!-- ── SLIDE 3: PROBLEMA ── -->
-<div class="slide s3">
+<div class="slide s3" id="problema">
   <div class="s3-content">
     <div class="label">El problema real</div>
     <h2 class="s3-hero">Un DS con adopción irregular no es un problema de herramienta — es de <em>fricción, confianza o relevancia.</em></h2>
@@ -718,11 +783,10 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">03 / 09</div>
 </div>
 
 <!-- ── SLIDE 4: DIAGNÓSTICO ── -->
-<div class="slide s4">
+<div class="slide s4" id="diagnostico">
   <div class="s4-left">
     <div class="label">Diagnóstico</div>
     <h2 class="s4-big">Primero entender, después proponer</h2>
@@ -752,11 +816,10 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">04 / 09</div>
 </div>
 
 <!-- ── SLIDE 5: PROPUESTA MVP ── -->
-<div class="slide s5">
+<div class="slide s5" id="propuesta">
   <div class="s5-glow"></div>
   <div class="s5-content">
     <div class="label">Propuesta</div>
@@ -778,11 +841,10 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">05 / 09</div>
 </div>
 
 <!-- ── SLIDE 6: GOBIERNO ── -->
-<div class="slide s6">
+<div class="slide s6" id="gobierno">
   <div class="s6-left">
     <div class="label">Gobierno</div>
     <h2 class="s6-big">Modelo federado</h2>
@@ -802,11 +864,10 @@
       <div class="gov-text">Antes de proponer algo nuevo, revisar si otro equipo del ecosistema de Personal ya lo resolvió. No reinventar la rueda — escalar desde lo que ya existe.</div>
     </div>
   </div>
-  <div class="slide-num">06 / 09</div>
 </div>
 
 <!-- ── SLIDE 7: RITUALES ── -->
-<div class="slide s7">
+<div class="slide s7" id="rituales">
   <div class="s7-content">
     <div class="label">Rituales</div>
     <h2 class="s7-big">La adopción no se decreta, se construye</h2>
@@ -829,11 +890,10 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">07 / 09</div>
 </div>
 
 <!-- ── SLIDE 8: MÉTRICAS ── -->
-<div class="slide s8">
+<div class="slide s8" id="metricas">
   <div class="s8-left">
     <div class="label">Métricas</div>
     <h2 class="s8-big">¿Cómo sabemos que está funcionando?</h2>
@@ -847,19 +907,59 @@
     <div class="metric"><div class="metric-dot"></div><div><div class="metric-title">Feedback del equipo</div><div class="metric-desc">Encuesta periódica: ¿el DS te facilita o te traba?</div></div></div>
     <div class="metric"><div class="metric-dot"></div><div><div class="metric-title">Adopción en práctica</div><div class="metric-desc">Componentes del DS en entregas reales vs. soluciones custom.</div></div></div>
   </div>
-  <div class="slide-num">08 / 09</div>
 </div>
 
 <!-- ── SLIDE 9: CIERRE ── -->
-<div class="slide s9">
+<div class="slide s9" id="cierre">
   <div class="s9-glow"></div>
   <div class="s9-content">
     <div class="s9-quote">"Un DS que nadie usa no es un sistema — es un archivo más. El trabajo de Design Ops es hacer que se convierta en parte natural de cómo trabaja el equipo, facilitándole la vida a los diseñadores."</div>
     <div class="s9-line"></div>
     <div class="s9-name">Giuliana Sambón — Product Design Ops</div>
   </div>
-  <div class="slide-num" style="color:#003d35; opacity:0.3">09 / 09</div>
 </div>
+
+<script>
+  const progressBar = document.getElementById('progressBar');
+  const slides = document.querySelectorAll('.slide');
+  const slideCounter = document.getElementById('slideCounter');
+  const navDots = document.querySelectorAll('.nav-dots a');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+
+    let current = 0;
+    slides.forEach((slide, i) => {
+      const rect = slide.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2) current = i;
+    });
+    slideCounter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+    navDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const currentScroll = window.scrollY;
+    let currentSlide = 0;
+    slides.forEach((slide, i) => {
+      if (slide.offsetTop <= currentScroll + 10) currentSlide = i;
+    });
+
+    if (e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      const next = Math.min(currentSlide + 1, slides.length - 1);
+      slides[next].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prev = Math.max(currentSlide - 1, 0);
+      slides[prev].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
 
 </body>
 </html>
