@@ -707,6 +707,112 @@
       color: #003d35;
     }
 
+    /* ════════════════════════════════
+       RESPONSIVE — TABLET
+    ════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .slide { height: auto; min-height: 100vh; scroll-snap-align: start; }
+
+      /* Two-column slides → single column */
+      .s2, .s4, .s6, .s8 { grid-template-columns: 1fr; }
+
+      .s2-left, .s2-right,
+      .s4-left, .s4-right,
+      .s6-left, .s6-right,
+      .s8-left, .s8-right {
+        padding: 48px 48px;
+        border: none;
+      }
+
+      .s2-big, .s4-big, .s6-big, .s8-big { font-size: 36px; }
+
+      .s3-hero { font-size: 36px; }
+      .s3-cards { grid-template-columns: 1fr 1fr; }
+      .s3-content { padding: 0 48px; }
+
+      .s5-big { font-size: 36px; }
+      .s5-content { padding: 0 48px; }
+      .s5-grid { grid-template-columns: 1fr; }
+
+      .s7-big { font-size: 36px; }
+      .s7-content { padding: 0 48px; }
+      .rituales { grid-template-columns: 1fr 1fr; }
+
+      .metrics { grid-template-columns: 1fr 1fr; }
+
+      .s9-quote { font-size: 24px; }
+      .s9-content { padding: 0 48px; }
+
+      .nav-dots { display: none; }
+    }
+
+    /* ════════════════════════════════
+       RESPONSIVE — MOBILE
+    ════════════════════════════════ */
+    @media (max-width: 640px) {
+      .slide { height: auto; min-height: 100vh; }
+
+      .s2-left, .s2-right,
+      .s4-left, .s4-right,
+      .s6-left, .s6-right,
+      .s8-left, .s8-right {
+        padding: 32px 24px;
+      }
+
+      /* Cover */
+      .s1-title { font-size: 32px; }
+      .s1-sub { font-size: 14px; max-width: 100%; }
+      .s1-content { padding: 0 24px; }
+      .s1-eyebrow { font-size: 9px; }
+
+      /* Contexto */
+      .s2-big { font-size: 28px; }
+      .s2-brief { font-size: 13px; }
+      .context-card { font-size: 12px; padding: 14px 16px; }
+
+      /* Problema */
+      .s3-hero { font-size: 26px; }
+      .s3-content { padding: 0 24px; }
+      .s3-cards { grid-template-columns: 1fr; gap: 10px; }
+      .s3-card { padding: 16px; }
+      .s3-card-title { font-size: 12px; }
+      .s3-card-desc { font-size: 11px; }
+
+      /* Diagnóstico */
+      .s4-big { font-size: 28px; }
+      .s4-desc { font-size: 13px; }
+
+      /* Propuesta */
+      .s5-big { font-size: 28px; }
+      .s5-content { padding: 0 24px; }
+      .s5-grid { grid-template-columns: 1fr; gap: 16px; }
+      .mvp-card { padding: 24px; }
+      .mvp-card-title { font-size: 16px; }
+      .tag { font-size: 10px; }
+
+      /* Gobierno */
+      .s6-big { font-size: 28px; }
+      .gov-row { grid-template-columns: 1fr; }
+
+      /* Rituales */
+      .s7-big { font-size: 28px; }
+      .s7-content { padding: 0 24px; }
+      .rituales { grid-template-columns: 1fr; gap: 12px; }
+      .ritual { padding: 20px; }
+
+      /* Métricas */
+      .s8-big { font-size: 28px; }
+      .metrics { grid-template-columns: 1fr; }
+
+      /* Cierre */
+      .s9-quote { font-size: 20px; max-width: 100%; }
+      .s9-content { padding: 0 24px; }
+
+      /* Nav */
+      .nav-dots { display: none; }
+      .slide-counter { font-size: 11px; right: 20px; bottom: 16px; }
+    }
+
   </style>
 </head>
 <body>
